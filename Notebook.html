@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>My Notebook of Harry Potter</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+		<div class="page-header">
+				<h1>
+					Vocabulary List! <small>Words have been searched during reading</small>
+				</h1>
+			</div>
+			<div id="content">
+			
+			</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var notetext = localStorage.getItem("noteText");
+var wordList = JSON.parse(notetext);
+var content = "<dl>";
+console.log(notetext.length);
+console.log(notetext);
+console.log(wordList);
+for (var key in wordList){
+    content += "<dt>" + key + "</dt>";
+    content += "<dd>" + wordList[key] + "</dd>";
+}
+content += "</dl>";
+document.getElementById("content").innerHTML = content;
+</script>
+
+
+<!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

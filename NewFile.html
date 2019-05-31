@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	 
+	
+	<title>My Project</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="clean-blog.css" rel="stylesheet">
+</head>
+<body>
+<canvas id="canvas"></canvas>
+	<div class="annotag open" style="position: fixed; top:20px; left:150px; width:640px;border-color: #605f5f; z-index:90">
+      <div class="container-fluid">
+      <div class="row">
+	      <div class="col-md-10">
+	      	<span class="word">hello</span><hr>
+			<span class="wordsource"></span><br /><br />
+			<span class="wordtitleMeaning"></span><br /> 
+			<span class="wordmeaning"></span><hr>
+			<span class="wordsource"></span><br /><br />
+			<span class="wordtitleMeaning"></span><br /> 
+			<span class="wordmeaning"></span>
+			<span class="wordsource"></span><br /><br />
+			<span class="wordtitleMeaning"></span><br /> 
+			<span class="wordmeaning"></span>
+	      </div>
+	      <div class="col-md-2">
+	      	<a href="#" class="menu-item red" onClick="return false;" >Save</a>
+	      </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Post Content -->
+    <article>
+    
+    <audio id="BackgroundAudio">
+      <source src="audio/harryPotter1.mov" type="audio/mpeg">
+    </audio>
+    <audio id="startAudio">
+      <source src="audio/harry-potter-ring.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="flip0">
+      <source src="audio/flip0.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="flip1">
+      <source src="audio/flip1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="flip2">
+      <source src="audio/flip2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="flip3">
+      <source src="audio/flip3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="flip4">
+      <source src="audio/flip4.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="flip5">
+      <source src="audio/flip5.mp3" type="audio/mpeg">
+    </audio>
+    <!-- ---------BOOK COVER PAGE--------- -->
+	<div class="container-fluid" id="home">
+        <div class="row">
+            <div class="col-md-1"></div>
+          	<div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-4" style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         				<hr>
+                        <h2>Harry Potter and Sorcerer's Stone</h2>
+                        <p>The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday, 
+                        when he receives a letter of acceptance to Hogwarts School of Witchcraft and Wizardry. Harry makes close friends and a few enemies during his first year at the school, 
+                        and with the help of his friends, Harry faces an attempted comeback by the dark wizard Lord Voldemort, 
+                        who killed Harry's parents, but failed to kill Harry when he was just 15 months old. His life changes on the day of his eleventh birthday when he receives a letter of acceptance into Hogwarts...</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img alt="Image Preview" class="img-fluid" src="img/Harrypotter_1.jpg">
+                    </div>
+                    <div class="col-md-2" style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         				<hr>
+         				<h2>Reading Progress</h2>
+                        <div class="progress">
+						  <div class="progress-bar progress-bar-striped" role="progressbar" id="progress" style="width:0%">
+						    0%
+						  </div>
+						</div>
+						<h5>Scanned words </h5><span id="count">0</span><span id="total"></span>
+                        <hr>
+							<a href="#" class="menu-item lightblue" onClick="return false;" >Start</a>
+                    		<a href="#" class="menu-item blue" onClick="return false;">Continue</a>
+							<a href="#" class="menu-item purple" onClick="return false;" >Notebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    
+    <!-- ---------BOOK CONTENT PAGE--------- -->
+    <div class="container-fluid" id="content" style="display: None;">
+        <nav class="menu menu-right">
+	       <a href="#" class="menu-item next" onClick="return false;" > <i class="fa fa-arrow-right"></i> </a>       
+	    </nav>
+	    <nav class="menu menu-left">
+	       <a href="#" class="menu-item back" onClick="return false;" > <i class="fa fa-home"></i> </a>
+	       <a href="#" class="menu-item previous" onClick="return false;" > <i class="fa fa-arrow-left"></i> </a>
+	    </nav>
+        <div class="imgpage" style="left:800px;">
+	    	<img class="img-fluid left" id="outside" src="img/OutsideApothecary.jpg" style="display: None;">
+			<span class="caption left outside" style="display: None;">Outside Apothecary</span>
+			<img class="img-fluid left" id="diagon" src="img/Diagon.jpg" style="display: None;">
+			<span class="caption left diagon" style="display: None;">Diagon Alley</span>
+			<img class="img-fluid left" id="owl" src="img/owlpost.png" style="display: None;">
+		    <span class="caption left owl" style="display: None;">Owl Post</span>
+		    <img class="img-fluid right" id="magic" src="img/wand.jpg" style="display: None;">
+			<span class="caption right magic" style="display: None;">Magic Wand</span>
+	    </div>
+	    
+	    <div class="imgpage" style="left:140px;">
+	    	
+	    </div>
+        <div class="row">
+          <div class="col-md-1">
+          	<div id="topArea"></div>
+          	<div id="leftArea"></div>
+          </div>
+          <div class="col-md-10">
+			<div class="row" id="page1" style="display: None;">
+				<div class="col-md-6"
+                style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         		<hr>
+                <h2>Chapter 5 Diagon Alley</h2>
+    
+                <p class="outsideApothecary">Outside the Apothecary, Hagrid checked Harry’s list again. “Just yer wand left - A yeah, an’ I still haven’t got yeh a birthday present.”</p>
+
+                <p>Harry felt himself go red. “You don’t have to —”</p>
+                <p class="cage">“I know I don’t have to. Tell yeh what, I’ll get yer animal. Not a toad, toads went outta fashion years ago, yeh’d be laughed at - an’ I don’ like cats, they make me sneeze. 
+                I’ll get yer an owl. All the kids want owls, they’re dead useful, carry yer mail an’ everythin’.”</p>
+                <p>Twenty minutes later, they left Eeylops Owl Emporium, which had been dark and full of rustling and flickering, jewel-bright eyes.</p>
+                <p class="leaving">Harry now carried a large cage that held a beautiful snowy owl, fast asleep with her head under her wing. He couldn’t stop stammering his thanks, sounding just like Professor Quirrell.</p>
+                <small>1</small>
+            	</div>
+
+				<div class="col-md-6" style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         
+         		<p>“Don’ mention it,” said Hagrid gruffly. “Don’ expect you've had a lotta presents from them Dursleys. Just Ollivanders left now — only place fer wands, Ollivanders, and yeh gotta have the best wand.”</p>
+         		<p>A magic wand… this was what Harry had been really looking forward to.</p>
+         		<p class="shop">The last shop was narrow and shabby. Peeling gold letters over the door read Ollivanders: Makers of Fine Wands since 382 B.C. 
+         		A single wand lay on a faded purple cushion in the dusty window.</p>
+         		<p>A tinkling bell rang somewhere in the depths of the shop as they stepped inside. It was a tiny place, empty except for a single, spindly chair that Hagrid sat on to wait. 
+         		Harry felt strangely as though he had entered a very strict library; 
+         		he swallowed a lot of new questions that had just occurred to him and looked instead at the thousands of narrow boxes piled neatly right up to the ceiling. 
+         		For some reason, the back of his neck prickled. The very dust and silence in here seemed to tingle with some secret magic.</p>
+         		<small style="float:right;">2</small>
+				</div>
+			</div>
+<!-- page break -->
+			<div class="row" id="page2" style="display: None;">
+				<div class="col-md-6"
+                style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+    
+                <p>“Good afternoon,” said a soft voice. Harry jumped. Hagrid must have jumped, too, because there was a loud crunching noise and he got quickly off the spindly chair.</p>
+                <p>An old man was standing before them, his wide, pale eyes shining like moons through the gloom of the shop.</p>
+                <p>“Hello,” said Harry awkwardly.</p>
+                <p class="wand">“Ah yes,” said the man. “Yes, yes. I thought I'd be seeing you soon. Harry Potter.” It wasn't a question. “You have your mother's eyes. 
+                It seems only yesterday she was in here herself, buying her first wand. Ten and a quarter inches long, swishy, made of willow. Nice wand for charm work.”</p>
+                <p>Mr. Ollivander moved closer to Harry. Harry wished he would blink. Those silvery eyes were a bit creepy.</p>
+                <p>“Your father, on the other hand, favored a mahogany wand. Eleven inches. Pliable. A little more power and excellent for transfiguration. Well, 
+                I say your father favored it — it's really the wand that chooses the wizard, of course.”</p>
+            	<small>3</small>
+            	</div>
+
+				<div class="col-md-6" style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         
+         		<p>Mr. Ollivander had come so close that he and Harry were almost nose to nose. Harry could see himself reflected in those misty eyes.</p>
+         		<p>“And that's where…”</p>
+         		<p>Mr. Ollivander touched the lightning scar on Harry's forehead with a long, white finger.</p>
+         		<p>“I'm sorry to say I sold the wand that did it,” he said softly. “Thirteen-and-a-half inches. Yew. Powerful wand, very powerful, 
+         		and in the wrong hands… well, if I'd known what that wand was going out into the world to do…”</p>
+         		<p>He shook his head and then, to Harry's relief, spotted Hagrid.</p>
+         		<p>“Rubeus! Rubeus Hagrid! How nice to see you again… Oak, sixteen inches, rather bendy, wasn't it?”</p>
+         		<p>“It was, sir, yes,” said Hagrid.</p>
+         		<p>“Good wand, that one. But I suppose they snapped it in half </p>
+         		<small style="float:right;">4</small>
+				</div>
+			</div>
+<!-- page break -->
+			<div class="row" id="page3" style="display: None;">
+				<div class="col-md-6"
+                style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+    
+                <p>when you got expelled?” said Mr. Ollivander, suddenly stern.</p>
+                <p>“Er — yes, they did, yes,” said Hagrid, shuffling his feet. “I've still got the pieces, though,” he added brightly.</p>
+                <p>“But you don't use them?” said Mr. Ollivander sharply.</p>
+                <p>“Oh, no, sir,” said Hagrid quickly. Harry noticed he gripped his pink umbrella very tightly as he spoke.</p>
+                <p>“Hmmm,” said Mr. Ollivander, giving Hagrid a piercing look. “Well, now — Mr. Potter. Let me see.” He pulled a long tape measure with silver markings out of his pocket. “Which is your wand arm?”</p>
+                <p>“Er — well, I'm right-handed,” said Harry.</p>
+                <p>“Hold out your arm. That's it.” He measured Harry from shoulder to finger, then wrist to elbow, shoulder to floor, knee to armpit and round his head. As he measured, he said, 
+                “Every Ollivander wand has a core of a powerful magical substance, Mr. Potter. We use unicorn hairs, phoenix tail</p>
+            	<small>5</small>
+            	</div>
+
+				<div class="col-md-6" style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         
+         		<p>feathers, and the heartstrings of dragons. No two Ollivander wands are the same, just as no two unicorns, dragons, or phoenixes are quite the same. And of course, 
+         		you will never get such good results with another wizard's wand.”</p>
+         		<p class="trywand">Harry suddenly realized that the tape measure, which was measuring between his nostrils, was doing this on its own. Mr. Ollivander was flitting around the shelves, taking down boxes.</p>
+         		<p>“That will do,” he said, and the tape measure crumpled into a heap on the floor. “Right then, Mr. Potter. Try this one. Beechwood and dragon heartstring. Nine inches. Nice and flexible. just take it and give it a wave.”</p>
+         		<p>Harry took the wand and (feeling foolish) waved it around a bit, but Mr. Ollivander snatched it out of his hand almost at once.</p>
+         		<p>He shook his head and then, to Harry's relief, spotted Hagrid.</p>
+         		<p>“Maple and phoenix feather. Seven inches. Quite whippy. Try”</p>
+         		<small style="float:right;">6</small>
+				</div>
+			</div>
+<!-- page break -->
+
+          </div>
+          <div class="col-md-1">
+          	<div id="bottomArea"></div>
+		    <div id="rightArea"></div></div>
+        </div>
+      </div>
+
+      
+	</article>
+	
+	
+	
+    <div id="circleCounter"></div>
+
+
+    
+      
+      
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>	
+    <script src="vendor/popper/popper.min.js"></script>	
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.6.0/dist/progressbar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+	<script src="js/clean-blog.js"></script> 
+	<script src='js/reading.js'></script>
+	<script src="js/jquery.tobiieyeX.js"></script>
+</body>
+</html>
